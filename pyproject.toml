@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "unnamed-orm"
+version = "0.1.0"
+description = ""
+authors = ["Christian <59421913+Cikmo@users.noreply.github.com>"]
+readme = "README.md"
+packages = [{include = "unnamed_orm"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pydantic = "^1.10.4"
+orjson = "^3.8.5"
+ciso8601 = "^2.3.0"
+uvloop = {version = "^0.17.0", optional = true, markers = "sys_platform != 'win32' and sys_platform != 'cygwin'"}
+asyncpg = {version = "^0.27.0", optional = true}
+psycopg = {version = "^3.1.8", optional = true}
+asyncmy = {version = "^0.2.5", optional = true}
+asyncodbc = {version = "^0.1.1", optional = true}
+
+[tool.poetry.extras]
+uvloop = ["uvloop"]
+asyncpg = ["asyncpg"]
+psycopg = ["psycopg"]
+asyncmy = ["asyncmy"]
+asyncodbc = ["asyncodbc"]
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
